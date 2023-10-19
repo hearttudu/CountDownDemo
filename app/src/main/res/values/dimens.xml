@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="splash_count_down_margin_start">5dp</dimen>
+    <dimen name="splash_count_down_count_size">20sp</dimen>
+    <dimen name="splash_count_down_tv_size">18sp</dimen>
+
+</resources>
