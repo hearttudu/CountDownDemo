@@ -6,9 +6,10 @@
 
     <TextView
         android:id="@+id/count_down_tv_day_count"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/splash_count_down_tv_width"
         android:layout_height="wrap_content"
-        android:text="0"
+        android:gravity="center"
+        android:text="99"
         android:textSize="@dimen/splash_count_down_count_size"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -30,10 +31,11 @@
 
     <TextView
         android:id="@+id/count_down_tv_hour_count"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/splash_count_down_tv_width"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/splash_count_down_margin_start"
-        android:text="0"
+        android:gravity="center"
+        android:text="24"
         android:textSize="@dimen/splash_count_down_count_size"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -55,10 +57,11 @@
 
     <TextView
         android:id="@+id/count_down_tv_minute_count"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/splash_count_down_tv_width"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/splash_count_down_margin_start"
-        android:text="0"
+        android:gravity="center"
+        android:text="60"
         android:textSize="@dimen/splash_count_down_count_size"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -80,10 +83,11 @@
 
     <TextView
         android:id="@+id/count_down_tv_second_count"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/splash_count_down_tv_width"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/splash_count_down_margin_start"
-        android:text="0"
+        android:gravity="center"
+        android:text="60"
         android:textSize="@dimen/splash_count_down_count_size"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

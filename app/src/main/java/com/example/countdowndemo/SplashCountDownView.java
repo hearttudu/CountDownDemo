@@ -1,5 +1,7 @@
 package com.example.countdowndemo;
 
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
@@ -10,7 +12,6 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 public class SplashCountDownView extends ConstraintLayout {
 
-    private final Context mContext;
     private TextView mDayCountTv;
     private TextView mHourCountTv;
     private TextView mMinuteCountTv;
@@ -30,8 +31,7 @@ public class SplashCountDownView extends ConstraintLayout {
 
     public SplashCountDownView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        mContext = context;
-        initInflate(mContext);
+        initInflate(context);
     }
 
     private void initInflate(Context context) {
@@ -47,12 +47,12 @@ public class SplashCountDownView extends ConstraintLayout {
         long currentTime = System.currentTimeMillis() / 1000;
         long remainTime = endTime - currentTime;
         if (remainTime <= 0) {
-            mDayCountTv.setText(0);
-            mHourCountTv.setText(0);
-            mMinuteCountTv.setText(0);
-            mSecondCountTv.setText(0);
+            mDayCountTv.setText("0");
+            mHourCountTv.setText("0");
+            mMinuteCountTv.setText("0");
+            mSecondCountTv.setText("0");
         } else {
-            long remainDay = remainTime / SEC_OF_ONE_DAY;
+            long remainDay = Math.min(remainTime / SEC_OF_ONE_DAY, 99);
             long remainHour = remainTime / SEC_OF_ONE_HOUR % 24;
             long remainMinute = remainTime / SEC_OF_ONE_MINUTE % 60;
             long remainSecond = remainTime % 60;
@@ -60,6 +60,18 @@ public class SplashCountDownView extends ConstraintLayout {
             mHourCountTv.setText(String.valueOf(remainHour));
             mMinuteCountTv.setText(String.valueOf(remainMinute));
             mSecondCountTv.setText(String.valueOf(remainSecond));
+            doAnim(mSecondCountTv);
         }
+    }
+
+    private void doAnim(View view) {
+        AnimatorSet animatorSet = new AnimatorSet();
+        // 位移动画
+        int transY = view.getHeight() / 2;
+        ObjectAnimator translateDisAppear = ObjectAnimator.ofFloat(view, "translationY", 0, transY);
+        ObjectAnimator translateAppear = ObjectAnimator.ofFloat(view, "translationY", -transY, 0);
+        animatorSet.setDuration(100);
+        animatorSet.play(translateAppear).after(translateDisAppear);
+        animatorSet.start();
     }
 }

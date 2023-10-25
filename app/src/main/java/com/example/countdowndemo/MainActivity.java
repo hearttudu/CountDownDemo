@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void updateCountdownUI() {
         mSplashCountDownView.setVisibility(View.VISIBLE);
-        mSplashCountDownView.updateCountDownUI(1697817600);
+        mSplashCountDownView.updateCountDownUI(1699220701);
         mUiHandler.sendEmptyMessageDelayed(MSG_WHAT_UPDATE_COUNTDOWN, COUNTDOWN_CHECK_PERIOD);
     }
 }
