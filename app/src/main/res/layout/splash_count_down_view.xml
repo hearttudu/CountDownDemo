@@ -7,7 +7,7 @@
     <TextView
         android:id="@+id/count_down_tv_day_count"
         android:layout_width="@dimen/splash_count_down_tv_width"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:gravity="center"
         android:text="99"
         android:textSize="@dimen/splash_count_down_count_size"
@@ -20,8 +20,9 @@
     <TextView
         android:id="@+id/count_down_tv_day"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_marginStart="@dimen/splash_count_down_margin_start"
+        android:gravity="center"
         android:text="天"
         android:textSize="@dimen/splash_count_down_tv_size"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -32,7 +33,7 @@
     <TextView
         android:id="@+id/count_down_tv_hour_count"
         android:layout_width="@dimen/splash_count_down_tv_width"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_marginStart="@dimen/splash_count_down_margin_start"
         android:gravity="center"
         android:text="24"
@@ -46,8 +47,9 @@
     <TextView
         android:id="@+id/count_down_tv_hour"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_marginStart="5dp"
+        android:gravity="center"
         android:text="时"
         android:textSize="@dimen/splash_count_down_tv_size"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -58,7 +60,7 @@
     <TextView
         android:id="@+id/count_down_tv_minute_count"
         android:layout_width="@dimen/splash_count_down_tv_width"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_marginStart="@dimen/splash_count_down_margin_start"
         android:gravity="center"
         android:text="60"
@@ -72,8 +74,9 @@
     <TextView
         android:id="@+id/count_down_tv_minute"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_marginStart="@dimen/splash_count_down_margin_start"
+        android:gravity="center"
         android:text="分"
         android:textSize="@dimen/splash_count_down_tv_size"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -84,7 +87,7 @@
     <TextView
         android:id="@+id/count_down_tv_second_count"
         android:layout_width="@dimen/splash_count_down_tv_width"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_marginStart="@dimen/splash_count_down_margin_start"
         android:gravity="center"
         android:text="60"
@@ -98,8 +101,9 @@
     <TextView
         android:id="@+id/count_down_tv_second"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_marginStart="@dimen/splash_count_down_margin_start"
+        android:gravity="center"
         android:text="秒"
         android:textSize="@dimen/splash_count_down_tv_size"
         app:layout_constraintBottom_toBottomOf="parent"
