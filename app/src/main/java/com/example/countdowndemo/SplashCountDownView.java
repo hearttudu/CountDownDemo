@@ -105,7 +105,7 @@ public class SplashCountDownView extends ConstraintLayout {
      * @return 补0后的字符串
      */
     private String formatNumber(long number) {
-        return number > 10 ? String.valueOf(number) : "0" + number;
+        return number >= 10 ? String.valueOf(number) : "0" + number;
     }
 
     /**
