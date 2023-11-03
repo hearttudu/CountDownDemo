@@ -2,6 +2,7 @@ package com.example.countdowndemo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -36,6 +37,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mSplashCountDownView = findViewById(R.id.splash_count_down_view);
+        SplashCountdownModel model = new SplashCountdownModel();
+        model.shadowColor = Color.parseColor("#66000000");
+        model.shadowDx = 0;
+        model.shadowDy = 2;
+        model.shadowRadius = 7;
+        mSplashCountDownView.updateBaseUi(model);
         findViewById(R.id.start).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

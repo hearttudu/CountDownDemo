@@ -12,31 +12,73 @@ import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 public class SplashCountDownView extends ConstraintLayout {
-    /** 倒计时-天 tv */
+    /**
+     * 倒计时-天 tv
+     */
     private TextView mDayCountTv;
-    /** 倒计时-时 tv */
+    /**
+     * 倒计时-时 tv
+     */
     private TextView mHourCountTv;
-    /** 倒计时-分 tv */
+    /**
+     * 倒计时-分 tv
+     */
     private TextView mMinuteCountTv;
-    /** 倒计时-秒 tv */
+    /**
+     * 倒计时-秒 tv
+     */
     private TextView mSecondCountTv;
-    /** 一天多少秒 */
+    /**
+     * 倒计时-天 tv
+     */
+    private TextView mDayTv;
+    /**
+     * 倒计时-时 tv
+     */
+    private TextView mHourTv;
+    /**
+     * 倒计时-分 tv
+     */
+    private TextView mMinuteTv;
+    /**
+     * 倒计时-秒 tv
+     */
+    private TextView mSecondTv;
+    /**
+     * 一天多少秒
+     */
     private static final int SEC_OF_ONE_DAY = 86400;
-    /** 一小时多少秒 */
+    /**
+     * 一小时多少秒
+     */
     private static final int SEC_OF_ONE_HOUR = 3600;
-    /** 一分钟多少秒 */
+    /**
+     * 一分钟多少秒
+     */
     private static final int SEC_OF_ONE_MINUTE = 60;
-    /** 一秒多少豪秒 */
+    /**
+     * 一秒多少豪秒
+     */
     private static final int MILLS_OF_ONE_SECOND = 1000;
-    /** 小时 mode */
+    /**
+     * 小时 mode
+     */
     private static final int HOUR_MODE = 24;
-    /** 分钟 mode */
+    /**
+     * 分钟 mode
+     */
     private static final int MINUTE_MODE = 60;
-    /** 秒 mode */
+    /**
+     * 秒 mode
+     */
     private static final int SECOND_MODE = 60;
-    /** 翻页动画时长 */
+    /**
+     * 翻页动画时长
+     */
     private static final int FLIP_ANIM_DURATION = 100;
-    /** 兜底最大剩余天数 防止展现异常 */
+    /**
+     * 兜底最大剩余天数 防止展现异常
+     */
     private static final int MAX_REMAIN_DAY = 99;
 
     public SplashCountDownView(Context context) {
@@ -63,6 +105,28 @@ public class SplashCountDownView extends ConstraintLayout {
         mHourCountTv = rootView.findViewById(R.id.count_down_tv_hour_count);
         mMinuteCountTv = rootView.findViewById(R.id.count_down_tv_minute_count);
         mSecondCountTv = rootView.findViewById(R.id.count_down_tv_second_count);
+        mDayTv = rootView.findViewById(R.id.count_down_tv_day);
+        mHourTv = rootView.findViewById(R.id.count_down_tv_hour);
+        mMinuteTv = rootView.findViewById(R.id.count_down_tv_minute);
+        mSecondTv = rootView.findViewById(R.id.count_down_tv_second);
+    }
+
+    /**
+     * 更新基本样式UI
+     *
+     * @param model 样式model
+     */
+    public void updateBaseUi(SplashCountdownModel model) {
+        mDayCountTv.setShadowLayer(model.shadowRadius, model.shadowDx, model.shadowDy, model.shadowColor);
+        mHourCountTv.setShadowLayer(model.shadowRadius, model.shadowDx, model.shadowDy, model.shadowColor);
+        mMinuteCountTv.setShadowLayer(model.shadowRadius, model.shadowDx, model.shadowDy, model.shadowColor);
+        mSecondCountTv.setShadowLayer(model.shadowRadius, model.shadowDx, model.shadowDy, model.shadowColor);
+
+        mDayTv.setShadowLayer(model.shadowRadius, model.shadowDx, model.shadowDy, model.shadowColor);
+        mHourTv.setShadowLayer(model.shadowRadius, model.shadowDx, model.shadowDy, model.shadowColor);
+        mMinuteTv.setShadowLayer(model.shadowRadius, model.shadowDx, model.shadowDy, model.shadowColor);
+        mSecondTv.setShadowLayer(model.shadowRadius, model.shadowDx, model.shadowDy, model.shadowColor);
+
     }
 
     /**
@@ -101,7 +165,6 @@ public class SplashCountDownView extends ConstraintLayout {
      * 一位数字前面补0
      *
      * @param number 数字
-     *
      * @return 补0后的字符串
      */
     private String formatNumber(long number) {
